@@ -34,8 +34,8 @@ const CounterComponent = () => {
                 <h2>The total count is: <strong>{count}</strong></h2>
             </div>
             <div className="counters">
-                { names.map((name) => 
-                <Counter name={name} />
+                { names.map((name, i) => 
+                <Counter key={i} name={name} />
                 )}
             </div>
             <button onClick={handleReset} style={{textAlign: "center"}}>Reset</button>

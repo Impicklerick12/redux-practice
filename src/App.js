@@ -4,7 +4,10 @@ import { useSelector } from 'react-redux'
 import { getUser } from './redux/ducks/user'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import { Counter } from './Exports'
+import {
+  Counter,
+  WorkoutTracker
+} from './Exports'
 
 import { useDispatch } from 'react-redux'
 
@@ -24,12 +27,13 @@ function App() {
             <a href="/counter">Counter</a>
           </li>
           <li>
-            <a href="/">New Link</a>
+            <a href="/workout">Workout Tracker</a>
           </li>
         </ul>
         <h1>Home</h1>
         <Switch>
           <Route exact path="/counter" component={Counter} />
+          <Route exact path="/workout" component={WorkoutTracker} />
         </Switch>
       </BrowserRouter>
     </div>
