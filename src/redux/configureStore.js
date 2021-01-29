@@ -6,6 +6,7 @@ import userReducer from './ducks/user'
 import activitiesReducer from './ducks/activities'
 import { asyncActionsReducer } from './ducks/asyncActions'
 import postsReducer from './ducks/posts'
+import bitcoinReducer from './ducks/bitcoin'
 
 // REDUX SAGA MIDDLEWARE
 import createSagaMiddleware from 'redux-saga'
@@ -21,6 +22,7 @@ const reducer = combineReducers({
     activities: activitiesReducer,
     asyncActions: asyncActionsReducer,
     posts: postsReducer,
+    bitcoin: bitcoinReducer
 });
 
 // STORE - CREATE STORE THROUGH REDUX, USING ALL REDUCERS, APPLYING MIDDLEWARE

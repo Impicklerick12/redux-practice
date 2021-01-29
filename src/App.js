@@ -7,7 +7,8 @@ import {
   Counter,
   WorkoutTracker,
   ThunkUsers,
-  Posts
+  Posts,
+  BTCTracker
 } from './Exports'
 
 import { useDispatch } from 'react-redux'
@@ -20,22 +21,38 @@ function App() {
     dispatch(getUser());
   }, [dispatch])
 
+  const links = [
+    {
+      href: '/counter',
+      text: 'Counter'
+    },
+    {
+      href: '/workout',
+      text: 'Workout Tracker'
+    },
+    {
+      href: '/users',
+      text: 'Find Users'
+    },
+    {
+      href: '/posts',
+      text: 'Posts'
+    },
+    {
+      href: '/btc',
+      text: 'BTC Tracker'
+    },
+  ]
+
   return (
     <div className="container">
       <BrowserRouter>
         <ul className="navbar">
-          <li>
-            <a href="/counter">Counter</a>
-          </li>
-          <li>
-            <a href="/workout">Workout Tracker</a>
-          </li>
-          <li>
-            <a href="/users">Find Users</a>
-          </li>
-          <li>
-            <a href="/posts">Posts</a>
-          </li>
+          { links.map(link => (
+            <li>
+              <a href={link.href}>{link.text}</a>
+            </li>
+          ))}
         </ul>
         <h1>Home</h1>
         <Switch>
@@ -43,6 +60,7 @@ function App() {
           <Route exact path="/workout" component={WorkoutTracker} />
           <Route exact path="/users" component={ThunkUsers} />
           <Route exact path="/posts" component={Posts} />
+          <Route exact path="/btc" component={BTCTracker} />
         </Switch>
       </BrowserRouter>
     </div>

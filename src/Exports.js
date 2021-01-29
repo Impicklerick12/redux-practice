@@ -9,3 +9,6 @@ export { default as ThunkUsers } from './components/ThunkUsers'
 
 // Workout Tracker
 export { default as Posts } from './components/Posts'
+
+// BTC Tracker
+export { default as BTCTracker } from './components/BTCTracker'

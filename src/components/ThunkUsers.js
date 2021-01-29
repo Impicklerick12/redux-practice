@@ -18,7 +18,7 @@ const ThunkUsers = () => {
         fetchUsers()
             .then((res) => {
                 // response.data is the array of users
-                const users = response.data
+                const users = res.data
                 dispatch(fetchUsersSuccess(users))
             })
             .catch((error) => {

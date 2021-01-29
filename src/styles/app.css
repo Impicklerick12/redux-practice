@@ -62,3 +62,19 @@
     margin: 1rem;
     padding: 1rem;
 }
+
+.chart-wrapper, canvas {
+    margin: auto;
+    max-width: 1250px;
+}
+
+.chart-wrapper {
+    margin-top: 50px;
+}
+
+.btns-wrapper {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    position: relative;
+}
