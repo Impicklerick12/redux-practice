@@ -63,13 +63,21 @@
     padding: 1rem;
 }
 
+.bitcoin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%
+}
+
 .chart-wrapper, canvas {
     margin: auto;
-    max-width: 1250px;
 }
 
 .chart-wrapper {
     margin-top: 50px;
+    width: 100%
 }
 
 .btns-wrapper {

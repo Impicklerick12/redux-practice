@@ -13,6 +13,8 @@ import {
 
 import { useDispatch } from 'react-redux'
 
+require('dotenv').config();
+
 function App() {
 
   const dispatch = useDispatch();

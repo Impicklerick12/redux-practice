@@ -1,13 +1,15 @@
 const initalState = {
     loading: false,
-    labels: [],
-    datasets: [{
-        label: "BTC",
-        data: [],
-        backgroundColor: "rgba(238, 175, 0, 0.4)",
-        borderColor: "rgba(238, 175, 0, 0,5)",
-        pointBorderColor: "rgba(238, 175, 0, 0.7)"
-    }]
+    data: {
+        labels: [],
+        datasets: [{
+            label: "BTC",
+            data: [],
+            backgroundColor: "rgba(238, 175, 0, 0.4)",
+            borderColor: "rgba(238, 175, 0, 0,5)",
+            pointBorderColor: "rgba(238, 175, 0, 0.7)"
+        }]
+    }
 }
 
 export default (state = initalState, action) => {
@@ -26,14 +28,17 @@ export default (state = initalState, action) => {
         case "SUCCESS_BITCOIN":
             return {
                 ...state,
-                labels: [],
-                datasets: [{
-                    label: "BTC",
-                    data: [],
-                    backgroundColor: "rgba(238, 175, 0, 0.4)",
-                    borderColor: "rgba(238, 175, 0, 0,5)",
-                    pointBorderColor: "rgba(238, 175, 0, 0.7)"
-                }]
+                loading: false,
+                data: {
+                    labels: payload.labels,
+                    datasets: [{
+                        label: "BTC",
+                        data: payload.data,
+                        backgroundColor: "rgba(238, 175, 0, 0.4)",
+                        borderColor: "rgba(238, 175, 0, 0,5)",
+                        pointBorderColor: "rgba(238, 175, 0, 0.7)"
+                    }]
+                }
             }
         default:
             return state

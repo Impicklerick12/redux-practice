@@ -8,7 +8,7 @@ const BTCTracker = () => {
     const dispatch = useDispatch();
     const state = useSelector(state => state.bitcoin)
 
-    const [number, setNumber] = useState(15)
+    const [number, setNumber] = useState(100)
 
     const data = {
         labels: ["11:00", "12:00"],
@@ -21,29 +21,29 @@ const BTCTracker = () => {
         }]
     }
 
-    const timeIntervals = ["1min", "5min", "15min", "30min"]
+    const timeIntervals = ["1min", "5min", "15min", "30min", "1hour", "4hour", "Daily"]
     
     const fetchBitcoinData = (time) => {
         // fetch data from redux using time
         dispatch(fetchData({
             time,
-            numberCount: number
+            number
         }))
     }
 
     return (
-        <div>
+        <div className="bitcoin">
             <h1>Bitcoin(BTC) Tracker</h1>
-            <div className={"btns-wrapper"}>
+            <div className="btns-wrapper">
                 { timeIntervals.map((t) => (
                     <button onClick={() => fetchBitcoinData(t)}>{t}</button>
                 ))}
                 <input onChange={(e) => setNumber(e.target.value)} />
             </div>
             { state.loading && <p>Loading...</p>}
-            <div className={"chart-wrapper"}>
+            <div className="chart-wrapper">
                 <Line
-                    data={data}
+                    data={state.data}
                 />
             </div>
         </div>
